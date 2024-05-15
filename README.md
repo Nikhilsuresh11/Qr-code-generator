@@ -22,7 +22,7 @@ To use this QR code generator, follow these steps:
 1. Clone this repository to your local machine:
 
     ```
-    git clone https://github.com/yourusername/qr-code-generator.git
+    https://github.com/Nikhilsuresh11/Qr-code-generator.git
     ```
 
 2. Navigate to the project directory:
