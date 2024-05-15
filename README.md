@@ -1,4 +1,3 @@
-Certainly! Here's a template for a README for your QR code generator project using Streamlit:
 
 ---
 
