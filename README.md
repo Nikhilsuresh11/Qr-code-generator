@@ -1,4 +1,3 @@
-
 ---
 
 # QR Code Generator using Streamlit
@@ -21,28 +20,28 @@ To use this QR code generator, follow these steps:
 
 1. Clone this repository to your local machine:
 
-    ```
-    https://github.com/Nikhilsuresh11/Qr-code-generator.git
-    ```
+   ```
+   https://github.com/Nikhilsuresh11/Qr-code-generator.git
+   ```
 
 2. Navigate to the project directory:
 
-    ```
-    cd qr-code-generator
-    ```
+   ```
+   cd qr-code-generator
+   ```
 
 3. Install the required dependencies:
 
-    ```
-    pip install -r requirements.txt
-    ```
+   ```
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
 To run the QR code generator app, execute the following command:
 
 ```
-streamlit run app.py
+streamlit run QR.py
 ```
 
 Once the Streamlit server is running, open your web browser and navigate to the provided URL (usually `http://localhost:8501`). You will see the QR code generator interface where you can input your data and customize the QR code as needed.
