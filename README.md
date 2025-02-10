@@ -24,7 +24,7 @@ graph LR;
 
     L -->|📊 Processed Data| M[📈 **Visualization**]
     
-    subgraph 📊 **Visualization & Reporting**
+    subgraph **Visualization & Reporting**
         M -->|📊 Dashboards| N[📺 **Google Looker Studio**]
     end
 
