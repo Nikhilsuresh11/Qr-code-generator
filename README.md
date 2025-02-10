@@ -21,7 +21,6 @@ graph TD;
     O -->|Generates Reports| P[Visualization Layer];
     P -->|Real-time Dashboards| Q[Google Looker Studio];
     P -->|Data Reports & Insights| R[Business Intelligence];
-... 
 
 ```
 
