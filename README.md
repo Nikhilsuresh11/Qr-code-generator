@@ -1,26 +1,22 @@
 ```mermaid
 graph TD;
-    A[IoT Device Layer] -->|Collects Real-time Data| B[Data Ingestion];
-    B -->|MQTT/HTTP Streaming| C[Cloud IoT Core];
-    C -->|Sends to Pub/Sub| D[Google Pub/Sub];
+    A[IoT Device] -->|Data Collection| B[Data Ingestion];
+    B -->|MQTT/HTTP| C[Google Pub/Sub];
+    C -->|Streaming Data| D[Data Processing];
+    D -->|Real-time Processing| E[Cloud Functions];
+    D -->|Batch Processing| F[Dataflow];
 
-    D -->|Streams Data| E[Data Processing & Cleaning];
-    E -->|Processes in Real-time| F[Cloud Functions];
-    E -->|Batch Processing| G[Dataflow];
-    E -->|Validates & Transforms| H[Data Transformation & Validation];
+    F -->|Cleaned Data| G[Storage & Analytics];
+    G -->|Fast Queries| H[BigQuery];
+    G -->|Raw Backup| I[Cloud Storage];
+    G -->|Advanced Analytics| J[Snowflake];
 
-    H -->|Stores Data| I[Storage & Analytics Layer];
-    I -->|Fast Queries| J[BigQuery];
-    I -->|Raw Data Backup| K[Cloud Storage];
-    I -->|Advanced Analytics| L[Snowflake];
+    J -->|Transforms Data| K[Data Modeling];
+    K -->|ETL & Aggregation| L[dbt];
 
-    L -->|Transforms Data| M[Data Transformation];
-    M -->|ETL & Data Modeling| N[dbt];
-    M -->|Cleans, Aggregates, Formats| O[Data Structuring];
+    L -->|Final Processed Data| M[Visualization];
+    M -->|Dashboards & Reports| N[Google Looker Studio];
 
-    O -->|Generates Reports| P[Visualization Layer];
-    P -->|Real-time Dashboards| Q[Google Looker Studio];
-    P -->|Data Reports & Insights| R[Business Intelligence];
 
 ```
 
