@@ -1,3 +1,51 @@
+```mermaid ... 
+graph TD;
+    A[IoT Device Layer] -->|Collects Real-time Data| B[Data Ingestion];
+    B -->|MQTT/HTTP Streaming| C[Cloud IoT Core];
+    C -->|Sends to Pub/Sub| D[Google Pub/Sub];
+
+    D -->|Streams Data| E[Data Processing & Cleaning];
+    E -->|Processes in Real-time| F[Cloud Functions];
+    E -->|Batch Processing| G[Dataflow];
+    E -->|Validates & Transforms| H[Data Transformation & Validation];
+
+    H -->|Stores Data| I[Storage & Analytics Layer];
+    I -->|Fast Queries| J[BigQuery];
+    I -->|Raw Data Backup| K[Cloud Storage];
+    I -->|Advanced Analytics| L[Snowflake];
+
+    L -->|Transforms Data| M[Data Transformation];
+    M -->|ETL & Data Modeling| N[dbt];
+    M -->|Cleans, Aggregates, Formats| O[Data Structuring];
+
+    O -->|Generates Reports| P[Visualization Layer];
+    P -->|Real-time Dashboards| Q[Google Looker Studio];
+    P -->|Data Reports & Insights| R[Business Intelligence];
+... 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 # QR Code Generator using Streamlit
