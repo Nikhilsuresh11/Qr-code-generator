@@ -1,21 +1,33 @@
-```mermaid
-graph TB;
-    A[IoT Device] -->|Data Collection| B[Data Ingestion];
-    B -->|MQTT/HTTP| C[Google Pub/Sub];
-    C -->|Streaming Data| D[Data Processing];
-    D -->|Real-time Processing| E[Cloud Functions];
-    D -->|Batch Processing| F[Dataflow];
+``` mermaid
+graph LR;
+    A[IoT Device] -->|Collects Data| B[Data Ingestion]
+    B -->|Transmits via MQTT/HTTP| C[Google Pub/Sub]
+    C -->|Streams Data| D[Data Processing]
 
-    F -->|Cleaned Data| G[Storage & Analytics];
-    G -->|Fast Queries| H[BigQuery];
-    G -->|Raw Backup| I[Cloud Storage];
-    G -->|Advanced Analytics| J[Snowflake];
+    subgraph Processing
+        D -->|Real-time Processing| E[Cloud Functions]
+        D -->|Batch Processing| F[Dataflow]
+    end
 
-    J -->|Transforms Data| K[Data Modeling];
-    K -->|ETL & Aggregation| L[dbt];
+    F -->|Stores Cleaned Data| G[Storage & Analytics]
 
-    L -->|Final Processed Data| M[Visualization];
-    M -->|Dashboards & Reports| N[Google Looker Studio];
+    subgraph Storage & Analytics
+        G -->|Fast Queries| H[BigQuery]
+        G -->|Raw Backup| I[Cloud Storage]
+        G -->|Advanced Analytics| J[Snowflake]
+    end
+
+    subgraph Data Transformation
+        J -->|Transforms Data| K[Data Modeling]
+        K -->|ETL & Aggregation| L[dbt]
+    end
+
+    L -->|Final Processed Data| M[Visualization]
+    
+    subgraph Visualization & Reporting
+        M -->|Creates Reports| N[Google Looker Studio]
+    end
+
 
 ```
 
