@@ -11,13 +11,13 @@ graph LR;
 
     F -->|📥 Stores Cleaned Data| G[📂 **Storage & Analytics**]
 
-    subgraph 🗄️ **Storage & Analytics**
+    subgraph 🗄 **Storage & Analytics**
         G -->|🚀 Fast Queries| H[📊 **BigQuery**]
         G -->|🗄️ Raw Backup| I[📦 **Cloud Storage**]
         G -->|📈 Advanced Analytics| J[📑 **Snowflake**]
     end
 
-    subgraph 🔄 **Data Transformation**
+    subgraph **Data Transformation**
         J -->|🔄 Transforms Data| K[🛠️ **Data Modeling**]
         K -->|🔀 ETL & Aggregation| L[🔧 **dbt**]
     end
