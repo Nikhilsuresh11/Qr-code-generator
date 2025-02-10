@@ -1,20 +1,21 @@
 ```mermaid
-graph RL;
-    N[Google Looker Studio] -->|Dashboards & Reports| M[Visualization];
-    M -->|Final Processed Data| L[dbt];
-    L -->|ETL & Aggregation| K[Data Modeling];
-    K -->|Transforms Data| J[Snowflake];
-
-    G[Storage & Analytics] -->|Advanced Analytics| J[Snowflake];
-    G -->|Raw Backup| I[Cloud Storage];
-    G -->|Fast Queries| H[BigQuery];
-
-    F[Dataflow] -->|Cleaned Data| G[Storage & Analytics];
-    D[Data Processing] -->|Batch Processing| F;
-    D -->|Real-time Processing| E[Cloud Functions];
-    C[Google Pub/Sub] -->|Streaming Data| D[Data Processing];
-    B -->|MQTT/HTTP| C[Google Pub/Sub];
+graph LR;
     A[IoT Device] -->|Data Collection| B[Data Ingestion];
+    B -->|MQTT/HTTP| C[Google Pub/Sub];
+    C -->|Streaming Data| D[Data Processing];
+    D -->|Real-time Processing| E[Cloud Functions];
+    D -->|Batch Processing| F[Dataflow];
+
+    F -->|Cleaned Data| G[Storage & Analytics];
+    G -->|Fast Queries| H[BigQuery];
+    G -->|Raw Backup| I[Cloud Storage];
+    G -->|Advanced Analytics| J[Snowflake];
+
+    J -->|Transforms Data| K[Data Modeling];
+    K -->|ETL & Aggregation| L[dbt];
+
+    L -->|Final Processed Data| M[Visualization];
+    M -->|Dashboards & Reports| N[Google Looker Studio];
 
 
 
