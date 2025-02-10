@@ -1,4 +1,4 @@
-```mermaid ... 
+```mermaid
 graph TD;
     A[IoT Device Layer] -->|Collects Real-time Data| B[Data Ingestion];
     B -->|MQTT/HTTP Streaming| C[Cloud IoT Core];
