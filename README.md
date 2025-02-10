@@ -1,21 +1,16 @@
 ```mermaid
-graph TB;
-    A[IoT Device] -->|Data Collection| B[Data Ingestion];
-    B -->|MQTT/HTTP| C[Google Pub/Sub];
-    C -->|Streaming Data| D[Data Processing];
-    D -->|Real-time Processing| E[Cloud Functions];
-    D -->|Batch Processing| F[Dataflow];
+graph TD;
+    A[ClearVUE.Zero Energy API] -->|Extracts Real-time Energy Data| B[Google Cloud Storage (GCS)];
+    B -->|Raw Data Storage| C[Snowflake];
+    C -->|Structured Data Storage & Analytics| D[Apache Airflow];
+    D -->|Automates ETL Processes| E[dbt (Data Build Tool)];
+    E -->|Transforms & Validates Data| F[Google Pub/Sub];
+    F -->|Streams Price Updates| G[Google Cloud Platform (GCP)];
 
-    F -->|Cleaned Data| G[Storage & Analytics];
-    G -->|Fast Queries| H[BigQuery];
-    G -->|Raw Backup| I[Cloud Storage];
-    G -->|Advanced Analytics| J[Snowflake];
+    G -->|Scalable Infrastructure| H[Vue.js & AdonisJS];
+    H -->|Frontend & Backend Integration| I[Looker / Power BI];
+    I -->|Interactive Dashboards| J[End Users];
 
-    J -->|Transforms Data| K[Data Modeling];
-    K -->|ETL & Aggregation| L[dbt];
-
-    L -->|Final Processed Data| M[Visualization];
-    M -->|Dashboards & Reports| N[Google Looker Studio];
 
 
 ```
