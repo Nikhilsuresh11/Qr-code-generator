@@ -1,34 +1,22 @@
 ```mermaid
-graph LR;
-    A[🛠️ **IoT Device**] -->|📡 Collects Data| B[🔗 **Data Ingestion**]
-    B -->|📨 MQTT/HTTP| C[☁️ **Google Pub/Sub**]
-    C -->|📊 Streams Data| D[🖥️ **Data Processing**]
+graph TD;
+    A[📡 IoT] -->|📥 Collection| B[🛠 Ingestion];
+    B -->|📡 MQTT/HTTP| C[☁️ Pub/Sub];
+    C -->|⚡ Streaming| D[⚙️ Processing];
+    D -->|⏩ Real-time| E[🔄 Functions];
+    D -->|⏳ Batch| F[📊 Dataflow];
 
-    subgraph  **Processing**
-        D -->|⚡ Real-time| E[⚙️ **Cloud Functions**]
-        D -->|⏳ Batch| F[🔄 **Dataflow**]
-    end
-
-    F -->|📥 Stores Cleaned Data| G[📂 **Storage & Analytics**]
-
-    subgraph **Storage & Analytics**
-        G -->|🚀 Fast Queries| H[📊 **BigQuery**]
-        G -->|🗄️ Raw Backup| I[📦 **Cloud Storage**]
-        G -->|📈 Advanced Analytics| J[📑 **Snowflake**]
-    end
-
-    subgraph **Data Transformation**
-        J -->|🔄 Transforms Data| K[🛠️ **Data Modeling**]
-        K -->|🔀 ETL & Aggregation| L[🔧 **dbt**]
-    end
-
-    L -->|📊 Processed Data| M[📈 **Visualization**]
+    F -->|🧹 Cleaned| G[📂 Storage];
     
-    subgraph **Visualization & Reporting**
-        M -->|📊 Dashboards| N[📺 **Google Looker Studio**]
-    end
+    G -->|🚀 Queries| H[🗄 BigQuery];
+    G -->|📦 Backup| I[🗄 Cloud Storage];
+    G -->|🧠 Analytics| J[❄️ Snowflake];
 
+    J -->|🔄 Transform| K[🔧 Modeling];
+    K -->|⚡ ETL| L[⚡ dbt];
 
+    L -->|📊 Data| M[📊 Visualization];
+    M -->|📈 Reports| N[📊 Looker Studio];
 
 ```
 
