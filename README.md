@@ -10,9 +10,6 @@ graph TD;
     G -->|Scalable Infrastructure| H[Vue.js & AdonisJS];
     H -->|Frontend & Backend Integration| I[Looker / Power BI];
     I -->|Interactive Dashboards| J[End Users];
-
-
-
 ```
 
 
