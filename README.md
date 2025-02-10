@@ -1,5 +1,5 @@
 ```mermaid
-graph LR;
+graph TB;
     A[IoT Device] -->|Data Collection| B[Data Ingestion];
     B -->|MQTT/HTTP| C[Google Pub/Sub];
     C -->|Streaming Data| D[Data Processing];
@@ -16,7 +16,6 @@ graph LR;
 
     L -->|Final Processed Data| M[Visualization];
     M -->|Dashboards & Reports| N[Google Looker Studio];
-
 
 
 ```
