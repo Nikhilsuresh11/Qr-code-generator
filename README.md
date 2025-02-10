@@ -4,7 +4,7 @@ graph LR;
     B -->|📨 MQTT/HTTP| C[☁️ **Google Pub/Sub**]
     C -->|📊 Streams Data| D[🖥️ **Data Processing**]
 
-    subgraph 🏭 **Processing**
+    subgraph  **Processing**
         D -->|⚡ Real-time| E[⚙️ **Cloud Functions**]
         D -->|⏳ Batch| F[🔄 **Dataflow**]
     end
